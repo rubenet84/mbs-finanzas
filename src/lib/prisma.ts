@@ -1,12 +1,21 @@
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
+import { PrismaClient } from '@prisma/client';
 
-// Load env vars
-import "dotenv/config";
+const prismaClientSingleton = () => {
+  const adapter = new PrismaBetterSqlite3(
+    { url: process.env.DATABASE_URL ?? 'file:./dev.db' },
+    { timestampFormat: 'unixepoch-ms' }
+  );
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
+  return new PrismaClient({ adapter });
 };
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
+declare global {
+  var prisma: undefined | ReturnType<typeof prismaClientSingleton>;
+}
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+const prisma = globalThis.prisma ?? prismaClientSingleton();
+
+export { prisma };
+
+if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;
