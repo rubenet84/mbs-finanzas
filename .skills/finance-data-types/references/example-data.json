@@ -1,0 +1,43 @@
+{
+  "transaction": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "date": "2026-04-28",
+    "description": "Grocery Store - Weekly Shopping",
+    "amount": 85.50,
+    "type": "expense",
+    "category": "food",
+    "accountId": "acc-001-checking",
+    "createdAt": "2026-04-28T14:30:00.000Z"
+  },
+  "balance": {
+    "total": 12580.75,
+    "available": 10250.30,
+    "pending": 2330.45,
+    "currency": "USD",
+    "lastUpdated": "2026-04-28T12:00:00.000Z"
+  },
+  "portfolioItem": {
+    "id": "port-001",
+    "name": "Apple Inc.",
+    "ticker": "AAPL",
+    "shares": 100,
+    "purchasePrice": 150.00,
+    "currentPrice": 185.50,
+    "category": "stocks"
+  },
+  "report": {
+    "id": "rep-2026-04",
+    "title": "Monthly Financial Report - April 2026",
+    "period": {
+      "start": "2026-04-01",
+      "end": "2026-04-30"
+    },
+    "summary": {
+      "totalIncome": 8500.00,
+      "totalExpenses": 4200.50,
+      "netSavings": 4299.50,
+      "savingsRate": 50.58
+    },
+    "generatedAt": "2026-04-28T10:00:00.000Z"
+  }
+}

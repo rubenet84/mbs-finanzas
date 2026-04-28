@@ -23,7 +23,10 @@
 - Finance-specific naming: `Transaction`, `Balance`, `Portfolio`, `Report`
 - Use `app/` directory structure (App Router) for all pages and API routes
 
-## Available Skills
+## Skills System
+
+The `.skills/` directory is the intelligence core of this project. Read `.skills/README.md` for detailed documentation on how to add or improve skills.
+
 All skills follow the [anthropics/skills](https://github.com/anthropics/skills) format, stored in `.skills/<name>/` with `SKILL.md` (YAML frontmatter + instructions), optional `scripts/`, `references/`, `assets/`.
 
 ### skill-creator
@@ -35,6 +38,7 @@ All skills follow the [anthropics/skills](https://github.com/anthropics/skills) 
 - **Location**: `.skills/finance-component-generator/`
 - **Purpose**: Generate React components for finance use cases (summary cards, transaction tables, charts, dashboard sections)
 - **Trigger**: User asks to create finance UI components, charts, data tables, or dashboard sections
+- **References**: `.skills/finance-component-generator/references/tailwind-guide.md` - Tailwind CSS 4 classes for financial states
 
 ### next-finance-api
 - **Location**: `.skills/next-finance-api/`
@@ -50,6 +54,7 @@ All skills follow the [anthropics/skills](https://github.com/anthropics/skills) 
 - **Location**: `.skills/finance-data-types/`
 - **Purpose**: Generate TypeScript interfaces and Zod validation schemas for finance data
 - **Trigger**: User mentions finance data types, interfaces, validation, or data structure definitions
+- **References**: `.skills/finance-data-types/references/example-data.json` - Example JSON with transactions and balances
 
 ### next-auth-finance
 - **Location**: `.skills/next-auth-finance/`
